@@ -5,12 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-/**
- * Route Imports
- */
-var signup = require('./routes/signup');
+var routes = require('./router/index');
+var users = require('./router/routes/users');
 
 var app = express();
 
@@ -30,6 +26,11 @@ if (app.get('env') === 'development') {
     // This covers serving up the index page
     app.use(express.static(path.join(__dirname, '../client/.tmp')));
     app.use(express.static(path.join(__dirname, '../client/app')));
+
+    /**
+     * Routes
+     */
+    var router = require('./router')(app);
 
     // Error Handling
     app.use(function(err, req, res, next) {
@@ -59,10 +60,5 @@ if (app.get('env') === 'production') {
         });
     });
 }
-
-/**
- * Routes
- */
-app.use('/signup', signup);
 
 module.exports = app;
