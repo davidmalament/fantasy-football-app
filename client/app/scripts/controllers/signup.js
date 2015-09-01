@@ -60,7 +60,7 @@ angular.module('clientApp')
 
     request.error(function (data) {
         console.log(data); // <-- changed
-    })
+    });
   };
 
 });

@@ -36,6 +36,11 @@ angular
         controller: 'SignupCtrl',
         controllerAs: 'signup'
       })
+      .when('/userlist', {
+        templateUrl: 'views/userlist.html',
+        controller: 'UserlistCtrl',
+        controllerAs: 'userlist'
+      })
       .otherwise({
         redirectTo: '/'
       });
