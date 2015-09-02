@@ -17,7 +17,6 @@ angular.module('clientApp')
 
     // we'll come back to here and fill in more when ready
     request.success(function (data) {
-        console.log("Returned from server:"+data);
         $scope.users = data;
     });
 

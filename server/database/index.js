@@ -3,6 +3,8 @@
  */
 var mongoose = require('mongoose');
 var UserModel = require('./schemas/users');
+var TeamModel = require('./schemas/team');
+var PlayerModel = require('./schemas/player');
 
 // Connections
 var developmentDb = 'mongodb://localhost/test';
@@ -36,3 +38,5 @@ db.once('open', function callback () {
 });
 
 exports.users = UserModel;
+exports.players = PlayerModel;
+exports.teams = TeamModel;

@@ -9,4 +9,7 @@ module.exports = function (app) {
 
     app.use('/userlist', require('./routes/userlist'));
     app.use('/userlist/deleteUser', require('./routes/userlist'));
+
+    app.use('/teams', require('./routes/teams'));
+    app.use('/teams/registerTeam', require('./routes/teams'));
 }
