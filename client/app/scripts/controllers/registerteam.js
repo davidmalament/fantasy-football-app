@@ -28,8 +28,8 @@ angular.module('clientApp')
     });
 
     register.submit = function() {
-      team.manager = register.selectedManager;
-      var request = $http.post('/teams/registerTeam', team);
+      register.team.manager = register.selectedManager;
+      var request = $http.post('/teams/registerTeam', register.team);
 
       // we'll come back to here and fill in more when ready
       request.success(function (data) {

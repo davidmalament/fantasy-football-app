@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <thead><tr>
+    <th>Rank</th>
+    <th>Player</th>
+    <th>Projected Score</th>
+    <th>Bye Week</th>
+  </tr></thead>
+  <tbody><tr ng-repeat="player in players">
+    <td>{{ player.overallrank }}</td>
+    <td>{{ player.firstname }}&nbsp{{ player.lastname }},&nbsp<small>{{ player.team }}</small>&nbsp<small>{{ player.position }}</small></td>
+    <td>{{ player.projected }}</td>
+    <td>{{ player.bye }}</td>
+  </tr></tbody>
+</table>

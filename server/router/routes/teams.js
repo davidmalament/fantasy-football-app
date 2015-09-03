@@ -11,9 +11,9 @@ var Users = db.users;
 
 router.get('/', function (req, res) {
   console.log("Fetching list of teams.");
-  Teams.find({}, function(err, docs) {
+  Teams.find({}).populate('manager').exec(function(err, docs) {
     res.json(docs);
-  })
+  });
 });
 
 // Setup the Route

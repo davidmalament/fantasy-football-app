@@ -46,6 +46,16 @@ angular
         controller: 'RegisterteamCtrl',
         controllerAs: 'registerTeam'
       })
+      .when('/teams', {
+        templateUrl: 'views/teams.html',
+        controller: 'TeamsCtrl',
+        controllerAs: 'teams'
+      })
+      .when('/players', {
+        templateUrl: 'views/players.html',
+        controller: 'PlayersCtrl',
+        controllerAs: 'players'
+      })
       .otherwise({
         redirectTo: '/'
       });

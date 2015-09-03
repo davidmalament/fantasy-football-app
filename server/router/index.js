@@ -12,4 +12,6 @@ module.exports = function (app) {
 
     app.use('/teams', require('./routes/teams'));
     app.use('/teams/registerTeam', require('./routes/teams'));
+
+    app.use('/players', require('./routes/players'));
 }
