@@ -1,0 +1,42 @@
+<div class="signup-container" ng-controller="RegisterteamCtrl as register">
+	<div class="alert alert-success" role="alert" ng-show="register.success" class="ng-hide">Successfully registered team.</div>
+	<div class="col-md-12">
+		<h3 class="signup-header">Register A New Team</h3>
+		<hr>
+		<br>
+	</div>
+
+	<div class="registerteam-form">
+		<form class="form-horizontal">
+
+
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="teamname">Team Name</label>
+			<div class="col-md-5">
+			<input id="teamname" name="teamname" ng-model="register.team.teamname" type="text" placeholder="Enter Team Name" class="form-control input-md">
+
+			</div>
+		</div>
+
+		<!-- Select input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="lastname">Select Manager</label>
+			<div class="col-md-5">
+			<select ng-model="register.selectedManager" ng-options="user.email for user in register.users"/>
+
+			</div>
+		</div>
+
+		<!-- Button -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="signup"></label>
+			<div class="col-md-5">
+				<button ng-click="register.submit()" id="registerBtn" name="registerBtn" class="btn btn-success btn-block">Register</button>
+			</div>
+		</div>
+
+		</form>
+	</div>
+
+</div>
