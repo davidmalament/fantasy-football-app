@@ -9,6 +9,7 @@
  */
 angular.module('clientApp')
   .service('playerservice', function ($http, $q) {
+    //implementation
     function getPlayers () {
       var def = $q.defer();
 
@@ -30,6 +31,7 @@ angular.module('clientApp')
       }
     }
 
+    //define the interface
     var service = {
       players: {},
       getPlayers: getPlayers
