@@ -8,30 +8,18 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('UserlistCtrl', function ($scope, $http) {
+  .controller('UserlistCtrl', function ($scope, $http, userservice) {
     var users;
 
     $scope.users = users = {};
 
-    var request = $http.get('/userlist');
-
-    // we'll come back to here and fill in more when ready
-    request.success(function (data) {
-        $scope.users = data;
-    });
-
-    request.error(function (data) {
-        console.log(data); // <-- changed
+    userservice.getUsers().then(function(data) {
+      $scope.users = data;
     });
 
     $scope.remove = function(user) {
-      $http.delete('/userlist/deleteUser/' + user.email)
-            .success(function(data) {
-                $scope.users = data;
-                console.log(data);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
+      userservice.deleteUser(user).then(function(data) {
+        $scope.users = data;
+      });
     };
   });
