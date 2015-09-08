@@ -8,7 +8,7 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-.controller('SignupCtrl', function ($scope, $http) { // note the added $http depedency
+.controller('SignupCtrl', function ($scope, $http, userservice) { // note the added $http depedency
 
   // Here we're creating some local references
   // so that we don't have to type $scope every
@@ -50,17 +50,7 @@ angular.module('clientApp')
     // Just so we can confirm that the bindings are working
     console.log(user);
 
-    // Make the request to the server ... which doesn't exist just yet
-    var request = $http.post('/signup', user);
-
-    // we'll come back to here and fill in more when ready
-    request.success(function (data) {
-        console.log(data); // <-- changed
-    });
-
-    request.error(function (data) {
-        console.log(data); // <-- changed
-    });
+    userservice.createUser(user);
   };
 
 });
