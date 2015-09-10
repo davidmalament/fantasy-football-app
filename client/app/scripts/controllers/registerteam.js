@@ -17,6 +17,7 @@ angular.module('clientApp')
 
     userservice.getUsers().then(function(data) {
       $scope.register.users = data;
+      $scope.register.selectedManager = data[0];
     });
 
     register.submit = function() {

@@ -4,11 +4,18 @@
     <th>Player</th>
     <th>Projected Score</th>
     <th>Bye Week</th>
+    <th>Action</th>
   </tr></thead>
   <tbody><tr ng-repeat="player in players">
     <td>{{ player.overallrank }}</td>
     <td>{{ player.firstname }}&nbsp{{ player.lastname }},&nbsp<small>{{ player.team }}</small>&nbsp<small>{{ player.position }}</small></td>
     <td>{{ player.projected }}</td>
     <td>{{ player.bye }}</td>
+    <td><button type="button" class="btn btn-default" ng-click="playerAction(player)">
+        <i class="fa fa-plus" ng-show="player.leagueteam===undefined"></i>
+        <i class="fa fa-minus" ng-show="player.leagueteam===myteam"></i>
+        <i class="fa fa-random" ng-show="player.leagueteam!==undefined && player.leagueteam!==myteam"></i>
+      </button>
+    </td>
   </tr></tbody>
 </table>

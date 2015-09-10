@@ -55,7 +55,23 @@ router.post('/registerTeam', function (req, res) {
               teamname: body.teamname,
               manager: body.manager._id,
               starters: [],
-              bench: []
+              bench: [],
+              QB: "",
+              RB1: "",
+              RB2: "",
+              WR1: "",
+              WR2: "",
+              FLEX: "",
+              TE: "",
+              D: "",
+              K: "",
+              BE1: "",
+              BE2: "",
+              BE3: "",
+              BE4: "",
+              BE5: "",
+              BE6: "",
+              BE7: ""
           });
 
           // save the user to the database

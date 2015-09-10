@@ -1,9 +1,69 @@
 <!-- Small button group -->
 <div class="btn-group">
   <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Change Team <span class="caret"></span>
+    {{selectedTeam.teamname}} <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
-    <li ng-repeat="team in teams" ng-click="changeTeam(team)">{{team.name}}</li>
+    <li class="list-group-item" ng-repeat="team in teams" ng-click="changeTeam(team)">{{team.teamname}}</li>
   </ul>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+  <h2 class="signup-header">My Team</h2>
+  <hr>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <h3>{{selectedTeam.teamname}}</h3>
+    <small>{{selectedTeam.manager.firstname}}&nbsp{{selectedTeam.manager.lastname}}</small>
+  </div>
+  <div class="col-md-4">
+    <div class="well well-lg">
+      Record: 0-0
+    </div>
+  </div>
+</div>
+<div class="row">
+  <h5>Starters</h5>
+  <table class="table">
+    <colgroup>
+      <col class="col-md-1">
+      <col class="col-md-7">
+      <col class="col-md-7">
+    </colgroup>
+    <tbody>
+      <th>Pos</th><th>Name</th><th>Team</th>
+      <tr><td><strong>QB</strong></td><td>{{selectedTeam.starters[0].name}}</td><td>{{selectedTeam.starters[0].team}}</td>
+      <tr><td><strong>RB</strong></td><td>{{selectedTeam.starters[1].name}}</td><td>{{selectedTeam.starters[1].team}}</td>
+      <tr><td><strong>RB</strong></td><td>{{selectedTeam.starters[2].name}}</td><td>{{selectedTeam.starters[2].team}}</td>
+      <tr><td><strong>WR</strong></td><td>{{selectedTeam.starters[3].name}}</td><td>{{selectedTeam.starters[3].team}}</td>
+      <tr><td><strong>WR</strong></td><td>{{selectedTeam.starters[4].name}}</td><td>{{selectedTeam.starters[4].team}}</td>
+      <tr><td><strong>FLEX</strong></td><td>{{selectedTeam.starters[5].name}}</td><td>{{selectedTeam.starters[5].team}}</td>
+      <tr><td><strong>TE</strong></td><td>{{selectedTeam.starters[6].name}}</td><td>{{selectedTeam.starters[6].team}}</td>
+      <tr><td><strong>D/ST</strong></td><td>{{selectedTeam.starters[7].name}}</td><td>{{selectedTeam.starters[7].team}}</td>
+      <tr><td><strong>K</strong></td><td>{{selectedTeam.starters[8].name}}</td><td>{{selectedTeam.starters[8].team}}</td>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <h5>Bench</h5>
+  <table class="table">
+    <colgroup>
+      <col class="col-md-1">
+      <col class="col-md-7">
+      <col class="col-md-7">
+    </colgroup>
+    <tbody>
+      <th>Pos</th><th>Name</th><th>Team</th>
+      <tr><td><strong>BE</strong></td><td>{{selectedTeam.bench[0].name}}</td><td>{{selectedTeam.bench[0].team}}</td>
+      <tr><td><strong>BE</strong></td><td>{{selectedTeam.bench[1].name}}</td><td>{{selectedTeam.bench[1].team}}</td>
+      <tr><td><strong>BE</strong></td><td>{{selectedTeam.bench[2].name}}</td><td>{{selectedTeam.bench[2].team}}</td>
+      <tr><td><strong>BE</strong></td><td>{{selectedTeam.bench[3].name}}</td><td>{{selectedTeam.bench[3].team}}</td>
+      <tr><td><strong>BE</strong></td><td>{{selectedTeam.bench[4].name}}</td><td>{{selectedTeam.bench[4].team}}</td>
+      <tr><td><strong>BE</strong></td><td>{{selectedTeam.bench[5].name}}</td><td>{{selectedTeam.bench[5].team}}</td>
+      <tr><td><strong>BE</strong></td><td>{{selectedTeam.bench[6].name}}</td><td>{{selectedTeam.bench[6].team}}</td>
+    </tbody>
+  </table>
 </div>

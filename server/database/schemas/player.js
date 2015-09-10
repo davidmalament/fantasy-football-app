@@ -14,7 +14,7 @@ var playerSchema = new Schema({
     positionrank : { type: Number, required: true},
     projected: { type: Number, required: true},
     bye: { type: Number, required: true },
-    rostered: {type: Boolean, required: true}
+    leagueteam: {type: String, ref: 'Team'}
 });
 
 var Player = mongoose.model('Player', playerSchema);

@@ -26,10 +26,9 @@ angular.module('clientApp')
      });
 
      $scope.itemSelection = function(team) {
-       team.data.starters.push({name:"Andrew Luck",team:"IND"});
+       team.data.QB = {name:"Andrew Luck",team:"IND"};
        $scope.selectedItem = team;
        $scope.teams.selectedItem = team;
        console.log("selected a team:"+team.label);
-       console.log($scope.selectedItem.data.starters);
      };
   });

@@ -35,15 +35,16 @@ angular.module('clientApp')
       var def = $q.defer();
 
       $http.post('/teams/registerTeam', team)
-      .success(function(data)){
+      .success(function(data){
         def.resolve(data);
       })
-      .error(function(data)){
+      .error(function(data){
+        console.log(data);
         def.reject("Failed to register team.");
       });
       return def.promise;
     }
-    
+
     //define the interface
     var service = {
       teams: {},
